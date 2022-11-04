@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+int
+float 
+double
+bool
+unsigned int
+char
  
  
  
@@ -62,12 +62,28 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int amount = 3;
+    int price = 7;
+    int time = 5;
+    float celsius = 5.4f;
+    float height = 18.0f;
+    float miles = 2.1f;
+    char a = 'a';
+    char b = 'b';
+    char c = 'c';
+    double process = 20.5;
+    double age = 57;
+    double pi = 3.14;
+    bool fact = true;
+    bool myth = false;
+    bool progress = true;
+    unsigned int number1 = 27;
+    unsigned int number2 = 500;
+    unsigned int number3 = 40000;
     
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(amount, price, time, celsius, height, miles, a, b, c, process, age, pi, fact, myth, progress, number1, number2, number3); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,42 +100,92 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+int playMidiNote(int velocity = 0, int pitch = 35)
+{
+    ignoreUnused(velocity, pitch);
+    return {};
+}
 
 /*
  2)
  */
+float doAddition(float firstNumber, float secondNumber = 1)
+{
+    ignoreUnused(firstNumber, secondNumber);
+    return {};
+}
 
 /*
  3)
  */
+int getTimeOfDay(int hours, int minutes, int seconds)
+{
+    ignoreUnused(hours, minutes, seconds);
+    return {};
+}
 
 /*
  4)
  */
+int prepareDinner(int ingredients, int ingredientAmounts, int cookTimeInMinutes = 30)
+{
+    ignoreUnused(ingredients, ingredientAmounts, cookTimeInMinutes);
+    return {};
+}
 
 /*
  5)
  */
+float brewCoffee(float numberOfCups, float coffeeStrength, bool isEspresso = false)
+{
+    ignoreUnused(numberOfCups, coffeeStrength, isEspresso);
+    return {};
+}
 
 /*
  6)
  */
+int practiceASong(int hoursPracticed = 1, int songDifficulty = 10)
+{
+    ignoreUnused(hoursPracticed, songDifficulty);
+    return {};
+}
 
 /*
  7)
  */
+double watchNetflix(int show, bool useSurround = false, int volume = 5)
+{
+    ignoreUnused(show, useSurround, volume);
+    return {};
+}
 
 /*
  8)
  */
+bool doAKickflip(bool kick, bool flip)
+{
+    ignoreUnused(kick, flip);
+    return {};
+}
 
 /*
  9)
  */
+float eatAtRestaurant(int typeOfFood, int dish, bool vegan, int drink)
+{
+    ignoreUnused(typeOfFood, dish, vegan, drink);
+    return {};
+}
 
 /*
  10)
  */
+int rideBicycle(double milesPerHour = 10, int destination = 60)
+{
+    ignoreUnused(milesPerHour, destination);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -141,27 +207,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto midiNotePlayed = playMidiNote();
     //2)
-    
+    auto additionResult = doAddition(5);
     //3)
-    
+    auto timeOfDay = getTimeOfDay(5, 34, 12);
     //4)
-    
+    auto dinnerIsReady = prepareDinner(5, 6);
     //5)
-    
+    auto coffeeBrewed = brewCoffee(3, 10);
     //6)
-    
+    auto songPractice = practiceASong();
     //7)
-    
+    auto netflixEvening = watchNetflix(5, true);
     //8)
-    
+    auto skateboardTrick = doAKickflip(true, true);
     //9)
-    
+    auto diningOut = eatAtRestaurant(5, 7, true, 20);
     //10)
+    auto bikeRide = rideBicycle();
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, midiNotePlayed, additionResult, timeOfDay, dinnerIsReady, coffeeBrewed, songPractice, netflixEvening, skateboardTrick, diningOut, bikeRide);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
